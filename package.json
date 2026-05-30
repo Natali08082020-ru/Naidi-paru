@@ -1,0 +1,19 @@
+{
+  "name": "naydi-paru",
+  "version": "1.0.0",
+  "description": "Браузерная игра «Найди пару» — memory game с уровнями и таймером",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve . -p 3000",
+    "preview": "npx --yes serve . -p 3000"
+  },
+  "keywords": [
+    "game",
+    "memory",
+    "matching",
+    "html5",
+    "browser-game"
+  ],
+  "author": "",
+  "license": "MIT"
+}

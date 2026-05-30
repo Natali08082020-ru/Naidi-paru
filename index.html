@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Найди пару — браузерная игра на память с уровнями и таймером">
+  <meta name="theme-color" content="#0f172a">
+  <title>Найди пару</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Найди пару</h1>
+      <p class="subtitle">Открой две карточки и найди одинаковые предметы до окончания времени</p>
+    </header>
+
+    <section class="controls">
+      <div class="level-badge">
+        <span class="level-label">Уровень</span>
+        <span id="level" class="level-value">1</span>
+      </div>
+      <button id="restart" class="btn">Новая игра</button>
+    </section>
+
+    <section class="stats">
+      <div class="stat">
+        <span class="stat-label">Ходы</span>
+        <span id="moves" class="stat-value">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Пары</span>
+        <span id="pairs" class="stat-value">0 / 6</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Таймер</span>
+        <span id="timer" class="stat-value">1:30</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Поле</span>
+        <span id="grid-size" class="stat-value">3×4</span>
+      </div>
+    </section>
+
+    <div class="timer-bar-wrap">
+      <div id="timer-bar" class="timer-bar"></div>
+    </div>
+
+    <section class="board-area">
+      <main id="board" class="board" aria-label="Игровое поле"></main>
+    </section>
+  </div>
+
+  <div id="win-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="win-title">
+    <div class="modal-content">
+      <h2 id="win-title">Уровень пройден!</h2>
+      <p id="win-text">Ты нашёл все пары 🎉</p>
+      <ul class="win-stats">
+        <li>Уровень: <strong id="win-level">1</strong></li>
+        <li>Ходов: <strong id="win-moves">0</strong></li>
+        <li>Осталось времени: <strong id="win-time">0:00</strong></li>
+      </ul>
+      <div class="modal-actions">
+        <button id="next-level" class="btn btn-primary">Следующий уровень</button>
+        <button id="play-again-win" class="btn">Сначала</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="lose-modal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="lose-title">
+    <div class="modal-content">
+      <h2 id="lose-title">Время вышло</h2>
+      <p>Попробуй ещё раз — ты почти успел!</p>
+      <ul class="win-stats">
+        <li>Уровень: <strong id="lose-level">1</strong></li>
+        <li>Найдено пар: <strong id="lose-pairs">0 / 6</strong></li>
+      </ul>
+      <div class="modal-actions">
+        <button id="retry-level" class="btn btn-primary">Повторить уровень</button>
+        <button id="restart-from-lose" class="btn">Сначала</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
