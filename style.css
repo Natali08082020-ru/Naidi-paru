@@ -350,15 +350,79 @@ body {
   justify-content: center;
 }
 
-@media (max-width: 720px) {
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+  .app {
+    padding: 8px 8px 10px;
   }
-}
 
-@media (max-width: 480px) {
+  .header {
+    margin-bottom: 6px;
+  }
+
+  .header h1 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  .subtitle {
+    display: none;
+  }
+
+  .controls {
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .level-badge {
+    padding: 4px 10px;
+    gap: 6px;
+  }
+
+  .level-label {
+    font-size: 0.72rem;
+  }
+
+  .level-value {
+    font-size: 1.05rem;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 0.82rem;
+    border-radius: 8px;
+  }
+
   .stats {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+
+  .stat {
+    padding: 5px 4px;
+    border-radius: 10px;
+  }
+
+  .stat-label {
+    font-size: 0.62rem;
+    margin-bottom: 1px;
+  }
+
+  .stat-value {
+    font-size: 0.82rem;
+  }
+
+  .timer-bar-wrap {
+    height: 4px;
+    margin-bottom: 8px;
+  }
+
+  .card {
+    border-radius: 10px;
+  }
+
+  .card-face {
+    border-radius: 10px;
   }
 
   .modal-actions {
@@ -367,5 +431,29 @@ body {
 
   .modal-actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 380px) {
+  .stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+  }
+
+  .header h1 {
+    font-size: 1.1rem;
+  }
+
+  .controls {
+    flex-wrap: nowrap;
+  }
+
+  .level-badge {
+    padding: 4px 8px;
+  }
+
+  .btn {
+    padding: 6px 10px;
+    font-size: 0.78rem;
   }
 }
